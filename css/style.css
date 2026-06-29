@@ -108,9 +108,17 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
 }
 
 .logo {
-    width: 100px;
+    width: 200px;
     height: auto;
     display: block;
+     margin: -50px 0;
+}
+
+@media (max-width: 640px) {
+    .logo {
+        width: 140px;
+        margin: -25px 0;
+    }
 }
 
 .nav {
@@ -126,7 +134,7 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
 }
 .menu a {
   font-weight: 600; font-size: .95rem; color: var(--ink);
-  position: relative; padding: 6px 0;
+  position: relative; padding: 7px 5px;
 }
 .menu a::after {
   content: ''; position: absolute; left: 0; bottom: 0;
@@ -223,6 +231,7 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
 .hero-visual { position: relative; height: 560px; }
 .hero-mascot {
   position: absolute; right: -30px; bottom: 0; height: 100%; max-height: 600px;
+  /* object-fit:cover; */
   filter: drop-shadow(0 30px 60px rgba(0,0,0,.4));
   border-radius: 2%;
   /* animation: gentle-bob 5s ease-in-out infinite; */
@@ -455,14 +464,13 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
 .video-thumbnail{
     display:block;
     width:100%;
-    max-width:320px;
     height:auto;
     border-radius:18px;
     transition:transform .35s ease;
 }
 
 .video-thumbnail-large{
-    max-width:430px;
+    max-width:480px;
 }
 
 .video-link:hover .video-thumbnail{
@@ -516,7 +524,7 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
   border-color: var(--saffron);
 }
 .plan-card.featured::before {
-  content: 'RECOMMENDED'; position: absolute; top: 20px; right: -40px;
+  content: 'RECOMMENDED'; position: absolute; top: 30px; right: -45px;
   background: var(--saffron); color: white;
   padding: 6px 50px; font-size: .7rem; font-weight: 800;
   letter-spacing: .15em; transform: rotate(45deg);
