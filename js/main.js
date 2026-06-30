@@ -94,10 +94,8 @@
     // Honeypot check
     const hp = form.querySelector('input[name="website"]');
     if (hp && hp.value.trim() !== '') {
-      // Silently "succeed" for bots
-      msg.className = 'form-message success';
-      msg.textContent = 'Thank you. Your enquiry has been received.';
-      form.reset();
+      // Silently "succeed" for bots — server already set the session flag
+      window.location.href = 'thankyou.php';
       return;
     }
 
@@ -144,12 +142,9 @@
       });
 
       if (response.ok) {
-        msg.className = 'form-message success';
-        msg.textContent = 'Thank you! Your franchise enquiry has been received. Our team will reach out within 24 hours.';
-        form.reset();
-        generateCaptcha();
-        // Scroll into view
-        msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Success — server has set the session flag, redirect to gated Thank You page
+        window.location.href = 'thankyou.php';
+        return;
       } else {
         let errorText = 'Something went wrong. Please call us at 91171 51715.';
         try {

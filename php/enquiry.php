@@ -52,6 +52,7 @@ if ($now - $last < 30) {
 // ------ Honeypot ------
 if (!empty($_POST['website'] ?? '')) {
     // pretend success for bots
+    $_SESSION['form_submitted'] = true; // NEW: allow thankyou.php gate to pass
     echo json_encode(['ok' => true]);
     exit;
 }
@@ -172,6 +173,7 @@ if (!$sent) {
 }
 
 $_SESSION[$key] = $now;
+$_SESSION['form_submitted'] = true; // NEW: gate flag for thankyou.php
 
 // Auto-acknowledgement to the enquirer (optional but nice)
 $ackSubject = "We received your franchise enquiry — Harman Chahawala";
