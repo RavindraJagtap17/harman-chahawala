@@ -290,7 +290,7 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
   position: relative;
 }
 .why-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  content: ''; position:fixed; top: 0; left: 9px; right: 9px; height: 4px;
   background: linear-gradient(90deg, var(--saffron), var(--gold));
   transform: scaleX(0); transform-origin: left;
   transition: transform .35s ease;
@@ -742,6 +742,11 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
   padding: 70px 0 30px;
   position: relative;
 }
+
+.footer-logo{
+    background-color: #fff;
+}
+
 .footer::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: linear-gradient(90deg, var(--saffron), var(--gold), var(--saffron));
